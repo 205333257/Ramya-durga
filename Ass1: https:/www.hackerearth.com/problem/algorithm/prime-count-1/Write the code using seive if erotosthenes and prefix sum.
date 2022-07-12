@@ -1,0 +1,19 @@
+ASS1:                                                                                                                                                                                                                                                  import math
+n=10000001
+seive=[True]*n
+seive[0]=seive[1]=False
+x=int(math.sqrt(n))
+for i in range(2,x+1):
+    if seive[i]:
+        for j in range(i*i,n,i):
+            seive[j]=False
+pf=[0]*n
+for i in range(2,n):
+    if seive[i]:
+        pf[i]=pf[i-1]+1
+    else:
+        pf[i]=pf[i-1]
+t=int(input())
+for i in range(t):
+    n=int(input())
+    print(pf[n])
