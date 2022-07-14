@@ -1,0 +1,12 @@
+
+nums=list(map(int,input().split()))
+a,b=0,sum(nums)
+for i in range(len(nums)):
+    b-=nums[i]
+    if a==b:
+        print(i)
+        break
+    elif i==len(nums)-1:
+        print(-1)
+    else:
+        a+=nums[i]
