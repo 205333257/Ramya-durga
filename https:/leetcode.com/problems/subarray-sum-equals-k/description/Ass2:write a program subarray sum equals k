@@ -1,0 +1,16 @@
+
+nums=list(map(int,input().split()))
+k=int(input())
+d={0:1}
+c=0
+p=0
+for i in nums:
+    p+=i
+    if p-k in d:
+        c+=d[p-k]
+    if p not in d:
+        d[p]=1
+    else:
+        d[p]+=1
+print(c)
+
