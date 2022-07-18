@@ -1,0 +1,13 @@
+def Valid_perfect_square(n):
+    a,b=0,(n//2)+1
+    while a<=b:
+        mid=(a+b)//2
+        if mid*mid==n:
+            return True
+        elif mid*mid<n:
+            a=mid+1
+        else:
+            b=mid-1
+    return False
+n=int(input())
+print(Valid_perfect_square(n))
