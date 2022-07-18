@@ -1,0 +1,15 @@
+def binary_search(arr,k):
+    low,high=0,len(arr)-1
+    while low<=high:
+        mid=(low+high)//2
+        if arr[mid]==k:
+            return mid
+        elif arr[mid]<k:
+            low=mid+1
+        else:
+            high=mid-1
+    return -1
+
+arr=list(map(int,input().split()))
+k=int(input())
+print('not found' if binary_search(arr,k)==-1 else binary_search(arr,k)+1)
